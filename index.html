@@ -48,25 +48,36 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">CabiNet: Scaling Neural Collision Detection for Object Rearrangement with Procedural Scene Generation</h1>
           <div class="is-size-5 publication-authors">
+
             <span class="author-block">
-              <a href="http://adithyamurali.com">Adithya Murali</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://cs.gmu.edu/~amousavi/">Arsalan Mousavian</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://clemense.github.io">Clemens Eppner</a><sup>1</sup>,
+              <a href="http://adithyamurali.com">Adithya Murali</a> &nbsp;
             </span>
             <span class="author-block">
-              <a href="https://fishbotics.com">Adam Fishman</a><sup>1,2</sup>,
+              <a href="https://cs.gmu.edu/~amousavi/">Arsalan Mousavian</a> &nbsp;
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1,2</sup>,
+              <a href="https://clemense.github.io">Clemens Eppner</a> &nbsp;
             </span>
+            <span class="author-block">
+              <a href="https://fishbotics.com">Adam Fishman</a> &nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a>
+            </span>
+
+
           </div>
 
+          <br>
           <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://research.nvidia.com/research-area/robotics"><b><img
+                    src="static/images/nvidia.svg" style="height:40px"></b></a></span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>NVIDIA,</span>
             <span class="author-block"><sup>2</sup>University of Washington</span>
-          </div>
+          </div> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -109,18 +120,11 @@
                   <span>Code (Coming Soon)</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-                </span> -->
             </div>
 
+            <br>
+            <span class="author-block"><b><img
+              src="static/images/cover.png" style="height:300px"></b></a></span>
           </div>
         </div>
       </div>
@@ -144,20 +148,102 @@
       </div>
     </div>
     <!--/ Abstract. -->
+</section>
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/HekPtYJfiNU?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- Dataset -->
+<section class="section">
+      <div class="container is-max-desktop">
+    
+        <div class="columns is-centered">
+    
+          <!-- Synthetic Data. -->
+          <div class="column">
+            <div class="content">
+              <h3 class="title is-4">Procedural Synthetic Data</h3>
+              <p>
+                We train our CabiNet network with only synthetic data. We generate over 650K cluttered scenes, which is six orders of magnitude more scene data than prior work on learning rearrangement in simulation <a href="https://ai2thor.allenai.org/manipulathor/">[1]</a>. We sample 2.5 million synthetic point clouds.
+              </p>
+              <img src="./static/images/data.gif" alt="synthetic dataset of shelves, cubbies, drawers, tabletop, etc." height="100%">
+              </img>
+            </div>
+          </div>
+          <!--/ Synthetic data. -->
+
+          <!-- Collision Queries. -->
+          <div class="column">
+            <h3 class="title is-4">Scene Collision Data</h3>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  We scale up neural collision checking by 30X <a href="https://sites.google.com/nvidia.com/scenecollisionnet">[2]</a>, with over 60 billion scene-object collision queries. <span style="color: #ff0000">Red</span> means the object is colliding with the scene, <span style="color: #2fff00">Green</span> for collision free.
+                </p>
+
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/collisions.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <!--/ Collision. -->
+      </div>
+</section>
+
+<!-- Robot demos -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">Real Robot Executions</h3>
+
+          <p>
+          Our model demonstrates Sim2Real transfer on the real robot, without training on any real data!
+          </p>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot2.mp4"
+                  type="video/mp4">
+        </video>
+
+        <br>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot3.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot4.mp4"
+                  type="video/mp4">
+        </video>
+
         </div>
       </div>
+</section>
+
+
+<!-- Paper video. -->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Supplementary Video</h2>
+      <div class="publication-video">
+      <iframe src="https://www.youtube.com/embed/HekPtYJfiNU?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
-    <!--/ Paper video. -->
   </div>
 </section>
+<!--/ Paper video. -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -172,15 +258,6 @@
 </section>
 
 <div class="container">
-  <!-- <div class="content has-text-centered">
-    <a class="icon-link"
-       href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
-      <i class="fas fa-file-pdf"></i>
-    </a>
-    <a class="icon-link" href="http://adithyamurali.com" class="external-link" disabled>
-      <i class="fab fa-github"></i>
-    </a>
-  </div> -->
   <div class="columns is-centered">
     <div class="column is-8">
       <div class="content">
