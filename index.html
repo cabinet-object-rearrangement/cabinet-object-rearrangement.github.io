@@ -102,12 +102,22 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=HekPtYJfiNU"
+                <a href="https://www.youtube.com/watch?v=Bs5QYkJVcjM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
                   <span>Video</span>
+                </a>
+              </span>
+              <!-- Talk Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=LBu_pSh5gNo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Talk (ICRA) </span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -129,6 +139,22 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/robot5.mp4"
+                  type="video/mp4">
+        </video>
+
+        </div>
+      </div>
+</section>
+
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -142,6 +168,55 @@
   </div>
 </section>
 
+<!-- Robot demos -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">Robotic Rearrangement in the Real World</h3>
+
+          <p>
+          Our <span class="dnerf">CabiNet</span> model demonstrates Sim2Real transfer, without training on any real data!
+          </p>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot6.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot5.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot2.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot3.mp4"
+                  type="video/mp4">
+        </video>
+
+
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
+          <source src="./static/videos/robot4.mp4"
+                  type="video/mp4">
+        </video>
+
+        <br>
+
+        </div>
+      </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -152,7 +227,7 @@
         <div class="content has-text-justified">
           <p>
             We address the important problem of generalizing robotic rearrangement to clutter without any explicit object models. 
-            We first generate over 650K cluttered scenes— orders of magnitude more than prior work—in diverse everyday environments, such as cabinets and shelves. We render synthetic partial point clouds from this data and use it to train our CabiNet model architecture. CabiNet is a collision model that accepts object and scene point clouds, captured from a single-view depth observation, and predicts collisions for SE(3) object poses in the scene. Our representation has a fast inference speed of 7μs/query with nearly 20% higher performance than baseline approaches in challenging environments. We use this collision model in conjunction with a Model Predictive Path Integral (MPPI) planner to generate collision-free trajectories for picking and placing in clutter. CabiNet also predicts waypoints, computed from the scene’s signed distance field (SDF), that allows the robot to navigate tight spaces during rearrangement. This improves rearrangement performance by nearly 35% compared to baselines. We systematically evaluate our approach, procedurally generate simulated experiments, and demonstrate that our approach directly transfers to the real world, despite training exclusively in simulation. Robot experiments in completely unknown scenes and objects are shown in the supplementary video.
+            We first generate over 650K cluttered scenes— orders of magnitude more than prior work—in diverse everyday environments, such as cabinets and shelves. We render synthetic partial point clouds from this data and use it to train our <span class="dnerf">CabiNet</span> model architecture. <span class="dnerf">CabiNet</span> is a collision model that accepts object and scene point clouds, captured from a single-view depth observation, and predicts collisions for <i>SE(3)</i> object poses in the scene. Our representation has a fast inference speed of 7μs/query with nearly 20% higher performance than baseline approaches in challenging environments. We use this collision model in conjunction with a Model Predictive Path Integral (MPPI) planner to generate collision-free trajectories for picking and placing in clutter. <span class="dnerf">CabiNet</span> also predicts waypoints, computed from the scene’s signed distance field (SDF), that allows the robot to navigate tight spaces during rearrangement. This improves rearrangement performance by nearly 35% compared to baselines. We systematically evaluate our approach, procedurally generate simulated experiments, and demonstrate that our approach directly transfers to the real world, despite training exclusively in simulation. Robot experiments in completely unknown scenes and objects are shown in the supplementary video.
           </p>
         </div>
       </div>
@@ -200,56 +275,6 @@
           </div>
         </div>
         <!--/ Collision. -->
-      </div>
-</section>
-
-<!-- Robot demos -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-
-      <div class="column">
-        <div class="content">
-          <h3 class="title is-4">Real Robot Executions</h3>
-
-          <p>
-          Our model demonstrates Sim2Real transfer on the real robot, without training on any real data!
-          </p>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot6.mp4"
-                  type="video/mp4">
-        </video>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot5.mp4"
-                  type="video/mp4">
-        </video>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot1.mp4"
-                  type="video/mp4">
-        </video>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot2.mp4"
-                  type="video/mp4">
-        </video>
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot3.mp4"
-                  type="video/mp4">
-        </video>
-
-
-        <video id="dollyzoom" autoplay controls muted loop playsinline width="45%">
-          <source src="./static/videos/robot4.mp4"
-                  type="video/mp4">
-        </video>
-
-        <br>
-
-        </div>
       </div>
 </section>
 
